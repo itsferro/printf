@@ -12,7 +12,7 @@ int print_from_to(char *start, char *end)
 {
 	int i = 0;
 
-	for (;start <= end; i++)
+	for (; start <= end; i++)
 	{
 		handle_buffer(*start);
 		start++;

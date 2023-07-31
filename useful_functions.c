@@ -8,16 +8,16 @@
  *
  * Return: a string.
  */
-char* itoa(int value, char* str, int base)
+char *itoa(int value, char *str, int base)
 {
 	int i = 0;
-	int is_negative = 0;
+	int is_negative = 0, digit;
 
 	if (value == 0)
 	{
 		str[i++] = '0';
 		str[i] = '\0';
-		return str;
+		return (str);
 	}
 
 	if (value < 0 && base == 10)
@@ -28,7 +28,7 @@ char* itoa(int value, char* str, int base)
 
 	while (value != 0)
 	{
-		int digit = value % base;
+		digit = value % base;
 		str[i++] = (digit > 9) ? (digit - 10) + 'a' : digit + '0';
 		value /= base;
 	}
@@ -40,7 +40,7 @@ char* itoa(int value, char* str, int base)
 
 	reverse_string(str);
 
-	return str;
+	return (str);
 }
 
 /**
@@ -49,14 +49,15 @@ char* itoa(int value, char* str, int base)
  *
  * Return: void.
  */
-void reverse_string(char* str)
+void reverse_string(char *str)
 {
 	int i = 0;
 	int j = strlen(str) - 1;
+	char temp;
 
 	while (i < j)
 	{
-		char temp = str[i];
+		temp = str[i];
 		str[i++] = str[j];
 		str[j--] = temp;
 	}

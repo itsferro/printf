@@ -9,6 +9,7 @@
 int print_char(va_list arg_list)
 {
 	char c = va_arg(arg_list, int);
+
 	return (handle_buffer(c));
 }
 
