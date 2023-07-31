@@ -44,6 +44,40 @@ char *itoa(int value, char *str, int base)
 }
 
 /**
+ * uitoa - changes a number to a string.
+ * @value: the number.
+ * @str: a pointer to a block of memory.
+ * @base: an unsigned integer stands for the base of the number.
+ *
+ * Return: a string.
+ */
+char *uitoa(unsigned int value, char* str, unsigned int base)
+{
+	int i = 0;
+	unsigned int digit;
+	
+	if (value == 0)
+	{
+		str[i++] = '0';
+		str[i] = '\0';
+		return (str);
+	}
+
+	while (value != 0)
+	{
+		digit = value % base;
+		str[i++] = (digit > 9) ? (digit - 10) + 'a' : digit + '0';
+		value /= base;
+	}
+
+	str[i] = '\0';
+
+	reverse_string(str);
+
+	return (str);
+}
+
+/**
  * reverse_string - reverses a string.
  * @str: a string.
  *

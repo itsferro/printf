@@ -13,15 +13,26 @@ int _printf(const char *format, ...)
 	unsigned int nbprinted = 0;
 	char *f_str = (char *)format, *check_point;
 
-	if (f_str == NULL)
+	va_start(arg_list, format);
+
+	if (f_str == NULL || (*f_str == '%' && f_str + 1 == NULL))
 		return (-1);
 
-	va_start(arg_list, format);
+	if (*f_str == '%' && *(f_str + 1) == ' ' && f_str + 2 == NULL)
+		return (-1);
+
 	while (*f_str != '\0')
 	{
 		if (*f_str != '%')
 		{
-			nbprinted += handle_buffer(*f_str);
+			if (*f_str == '\\')
+			{
+				nbprinted += handle_buffer (*(++f_str));
+			}
+			else
+			{
+				nbprinted += handle_buffer (*f_str);
+			}
 		}
 		else
 		{

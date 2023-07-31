@@ -26,7 +26,7 @@ int print_int(va_list arg_list)
 	    n = 0;
 	char *str, *mem;
 
-	str = itoa(i, malloc(sizeof(int)), 10);
+	str = itoa(i, malloc(sizeof(i)), 10);
 	mem = str;
 
 	n = strlen(str);
@@ -85,14 +85,14 @@ int print_percent(va_list arg_list)
  */
 int print_unsigned(va_list arg_list)
 {
-	int ui = (int)va_arg(arg_list, unsigned int),
-	    nbprinted = 0,
-	    n = 0;
+	unsigned int ui = va_arg(arg_list, unsigned int),
+		     nbprinted = 0,
+		     n = 0;
 	char *str, *mem;
-
-	str = itoa(ui, malloc(sizeof(int)), 10);
+	
+	str = uitoa(ui, malloc(sizeof(ui)), 10);
 	mem = str;
-
+	
 	n = strlen(str);
 	while (nbprinted < n)
 	{

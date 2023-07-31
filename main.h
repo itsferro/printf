@@ -28,7 +28,8 @@ typedef struct specifiers
 /*_____________________________________functions prototypes_____________________________________*/
 
 /*useful_functions.c*/
-char* itoa(int value, char* str, int base);
+char *itoa(int value, char* str, int base);
+char *uitoa(unsigned int value, char* str, unsigned int base);
 void reverse_string(char* str);
 
 /*writeing_functions.c*/
