@@ -56,11 +56,11 @@ int print_string(va_list arg_list)
 		return (0);
 
 	i = strlen(s);
-	while (nbprinted < (int)i)
+	while (i > 0)
 	{
-		handle_buffer(*s);
+		nbprinted += handle_buffer(*s);
 		s++;
-		nbprinted++;
+		i--;
 	}
 	return (nbprinted);
 }
