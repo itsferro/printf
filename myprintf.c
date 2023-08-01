@@ -26,26 +26,18 @@ int _printf(const char *format, ...)
 		if (*f_str != '%')
 		{
 			if (*f_str == '\\')
-			{
-				nbprinted += handle_buffer (*(++f_str));
-			}
+				nbprinted += handle_buffer(*(++f_str));
 			else
-			{
-				nbprinted += handle_buffer (*f_str);
-			}
+				nbprinted += handle_buffer(*f_str);
 		}
 		else
 		{
 			check_point = f_str;
 			f_str++;
 			if (get_format_specifier(f_str) == NULL)
-			{
 				nbprinted += print_from_to(check_point, f_str);
-			}
 			else
-			{
 				nbprinted += get_handling_function(f_str, arg_list);
-			}
 		}
 		f_str++;
 	}

@@ -89,10 +89,10 @@ int print_unsigned(va_list arg_list)
 		     nbprinted = 0,
 		     n = 0;
 	char *str, *mem;
-	
+
 	str = uitoa(ui, malloc(sizeof(ui)), 10);
 	mem = str;
-	
+
 	n = strlen(str);
 	while (nbprinted < n)
 	{

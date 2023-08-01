@@ -51,11 +51,11 @@ char *itoa(int value, char *str, int base)
  *
  * Return: a string.
  */
-char *uitoa(unsigned int value, char* str, unsigned int base)
+char *uitoa(unsigned int value, char *str, unsigned int base)
 {
 	int i = 0;
 	unsigned int digit;
-	
+
 	if (value == 0)
 	{
 		str[i++] = '0';
