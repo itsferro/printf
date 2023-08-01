@@ -17,7 +17,9 @@
  * @c: a string holds the format speccifiers charactrs.
  * @f: a pointer to a function that will handle the argument.
  *
- * Description: making a 2 dimentional array that that holdes the format speccifiers charactrs and a pointer to it's associate function.
+ * Description: making a 2 dimentional array
+ *	that holdes the format speccifiers charactrs
+ *	and a pointer to it's associate function.
  */
 typedef struct specifiers
 {
@@ -25,12 +27,12 @@ typedef struct specifiers
 	int (*f)(va_list arg_list);
 } specifier_f;
 
-/*_____________________________________functions prototypes_____________________________________*/
+/*_________________functions prototypes_________________*/
 
 /*useful_functions.c*/
-char *itoa(int value, char* str, int base);
-char *uitoa(unsigned int value, char* str, unsigned int base);
-void reverse_string(char* str);
+char *itoa(int value, char *str, int base);
+char *uitoa(unsigned int value, char *str, unsigned int base);
+void reverse_string(char *str);
 
 /*writeing_functions.c*/
 int handle_buffer(char c);
